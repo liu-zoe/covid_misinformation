@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>COVID-19 Misinformation</title>
+
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!--Section: Title Card-->
+				<section data-transition="fade">
+					<h3>A Visual Story of the COVID19 Outbreak and How Misinformation Spreads</h3>
+					<p>Zoe Liu</p>
+					<p>Aug 5 2020</p>
+				</section>
+
+				<!--Section: Intro-->
+				<section data-transition="fade">					
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/globalmap_animate.html"></iframe>
+					</div>
+				</section>
+				<!--Method-->
+				<section data-transition="fade">
+					<h2>Method</h2>
+				</section>
+				<section data-transition="fade">
+					<h3>Tools</h3>
+					<ul>
+						<li>Python</li>
+						<li>Plotly</li>
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h3>Data Source</h3>
+					<ul>
+						<li>Google Trends</li>
+						<li>Twitter</li>
+					</ul>
+				</section>
+				<section data-transition="fade" id="fragments">
+					<h4>What are Google Trends data<a href="https://support.google.com/trends/answer/4365533?hl=en&ref_topic=6248052"><sup>1</sup></a>?</h4>
+					<ul>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Random sample of actual search requests made to Google</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Normalized search data to make comparisons between terms easiers</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Search Interest scaled on a range of 0 to 100 based on a topic's proportion to all searches</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Search terms with low search volume appear as "0"</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Data point is relative in the range of time and geography</li>						
+					</ul>
+				</section>
+				<section data-transition="fade">
+					<h4>Twitter</h4>
+					<ul>
+						<li>Tweepy</li>
+						<li>Twint</li>
+					</ul>
+				</section>
+
+				
+
+				<!--Section: Misinformation 1: COVID-19 was caused by Chinese eating bats-->
+				<section data-transition="fade">
+					<h3>Misinformation 1</h3>
+					<h3>"COVID-19 was causeed by Chinese eating bats"</h3>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/SingTaoDaily_2020_01_07_YuanGUoYong_01.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Jan 7th, Sing Tao Daily, the second largest Chinese language newspaper in Hong Kong, quoted microbiologist Yuen Kwok-yung on the estimated origin of the virus.  
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/SingTaoDaily_2020_01_07_YuanGUoYong_02.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							"香港大學微生物學系講座教授袁國勇相信，武漢不明原因肺炎由冠狀病毒引起，他估計今次新病毒很大機會與沙士一樣，源頭來自蝙蝠，傳給某種野生動物，再跳到人類。"
+						</p>
+						<p>
+							"Hong Kong University microbiologist Yuen Kwok-yung believes the wuhan pneumonia is caused by a coronavirus and he esimates that the new virus is very similar as SARS in
+							that it orignated from bats, passing on to other wild animals and eventually to human." 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/batsoup_socialmedia.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							In late Jan, videos of bat soup went viral on Chinese social media Weibo and TikTok. Among them is a video of this young lady eating bat with chopsticks. 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/batsoup_twitter_2020-01-22.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+						On Jan 22nd, Chen Qiushi, a lawyer and activist well-known online, shared one of the bat soup videos on Twitter
+						and asked: "...Will the Chinese stop eating wild animals after all this?". 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/DailyMail_batsoup_2020-01-23.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+						Daily Mail ran a story on the bat soup videos and linked it to coronavirus on Jan 23rd. 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/RT_batsoup_2020-01-23.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+						On the same day RT published a similar story and claimed it "actually perfectly possible" that the virus was caused by eating infected bat soup. 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/batsoup_youtube_paulwatson_2020-01-24.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Jan 24th, far-right YouTuber Paul Joseph Watson promoted the link between bat soup and coronavirus. 
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/JesseWatters.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Mar 2nd, Fox News host Jesse Watters said:
+						</p>
+						<p>
+							"Let me tell you why it happened in China...They have these markets where they were eating raw bats and snakes.
+							They are very hungry people.The Chinese communist government cannot feed the people. And they are desperate, this food is uncooked, it is unsafe. 
+							And that is why scientists believe that’s where it originated from."
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/A Song About Coronavirus by Kodama Boy.html" data-background-interactive>
+					<div style="position: absolute; width: 30%; left: 80%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Mar 15th, Kodama Boy wrote <i>A Song About Coronavirus</i>.
+						</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h4>Search Interest of "bat soup"</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_bat_global.html"></iframe>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h4>Search Interest of "bat soup"</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_bat_global_annotated.html"></iframe>
+					</div>
+				</section>
+				<!--Section: Misinformation 2: Coronavirus comes from the Wuhan lab-->
+				<section data-transition="fade">
+					<h3>Misinformation 2</h3>
+					<h3>"Coronavirus comes from the Wuhan lab"</h3>
+				</section>
+				<section data-transition="fade">
+					<h3>ROUND ONE</h3>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/Washington_Times_2020_01_24_BIll_Gertz.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Jan 24th, Bill Gertz wrote, "The deadly animal virus epidemic... may have originated in a Wuhan laboratory".
+						</p>						
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/GNews_2020_01_25.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 80%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Jan 25th, GNews pushed a story claiming that China will admit coronavirus coming from its P4 lab.
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/mediamatter_2020_02_06_steve_bannon_01.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							One the same day, Steve Bannon pushed the wuhan lab theory from GNews on his radio broadcast <em>War Room: Pandemic</em>.
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/ZeroHedge_2020_01_29.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On Jan 29th, Tyler Durden's blog on Zero Hedge assigned a name to the wuhan lab theory.
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/ZeroHedge_2020_01_29b.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							He argued that Dr. Peng Zhou was somehow responsible for the source of this pandemic 
+							because "his primary field of study is researching how and why bats can be infected 
+							with some of the most nightmarish viruses in the world including Ebola, SARS and Coronavirus, and not get sick".
+						</p>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<h4>Seach Interest of "Wuhan Lab" Key Words Worldwide: Jan through Mar</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_wuhanlab_tillMar_20200505.html"></iframe>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<h3>ROUND TWO </h3>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/WashintonPost_JoshRogin_2020_04_14.png" data-background-interactive>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/FoxNews_2020_04_15.png" data-background-interactive>
+				</section>
+				<section data-transition="fade">
+					<h4>Seach Interest of "Wuhan Lab" Key Words Worldwide: Jan through Apr</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_wuhanlab_20200504.html"></iframe>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h4>Average Search interest in Jan</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_wuhanlab_US_States_Jan[avg].html"></iframe>
+					</div>
+				</section>
+				</section>
+				<section data-transition="fade">
+					<h4>Average Search interest on Jan 25th (Repeated Sampling)</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/Avg_wuhanlab_US_States_Jan25.html"></iframe>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h4>Average Search interest on Jan 26th (Repeated Sampling)</h4>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/Avg_wuhanlab_US_States_Jan26.html"></iframe>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h3>Misinformation 3: 5G Network</h3>
+				</section>
+				<section data-transition="fade">
+					Search Interest of 5G network in 2019
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_5G_2020_01.html"></iframe>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<p>On Jan 19th, a tweet speculated on a link between 5G and coronavirus:</p>
+					<p>
+						"Wuhan has 5,000+ #5G base stations now and 50,000 by 2021 — is it a disease or 5G?"
+						<a href="https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html"><sup>2</sup></a>
+					</p>
+				</section>
+				<section data-transition="fade">
+					<div style="float: center; max-width: 100%;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="nl" dir="ltr">Artikel verwijderd. Zegt weer genoeg. <a href="https://t.co/AGOGpYdprR">pic.twitter.com/AGOGpYdprR</a></p>&mdash; 1 1 : 5 9 : 0 1 (@NWOforum) <a href="https://twitter.com/NWOforum/status/1223870765893857281?ref_src=twsrc%5Etfw">February 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>					
+					</div>
+				</section>
+				<section data-transition="fade">
+					Search Interest of 5G network in 2020
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/GT_5G_2020_03.html"></iframe>
+					</div>				
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/codastory_2020_04_14_01.html" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							Isobel Cockerel and Ashely Jung at codastory pointed out a few celebrities pushed 5G coronavirus conspiracies to millions of fans.
+						</p>
+					</div>
+				</section>
+				<section data-background-iframe="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/img/codastory_2020_04_14_02.html" data-background-interactive>
+				</section>
+				<section data-transition="fade" id="fragments">
+					<p>Scraping Public Twitter Posts</p>
+					<ul>
+						<li class="fragment fade-in-then-semi-out">April 1st to 8th </li>
+						<li class="fragment fade-in-then-semi-out">Python package: twint </li>
+						<li class="fragment fade-in-then-semi-out">Tweets contains "5g" and "coronavirus", "covid", or "virus"</li>
+						<li class="fragment fade-in-then-semi-out">Compile a list of individual users mentioned or quoted the most</li>
+					</ul>
+				</section>
+
+				<section data-transition="fade">
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/twitter_20200624.html"></iframe>
+					</div>				
+				</section>
+
+				<section data-transition="fade">
+					<div style="float: left; max-width: 50%;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">5G technology is a killer and must be resisted by all. Watch SDM on this.<a href="https://t.co/IL7Ozwofhg">https://t.co/IL7Ozwofhg</a></p>&mdash; Senator Dino Melaye. (SDM) (@dino_melaye) <a href="https://twitter.com/dino_melaye/status/1246141470085652480?ref_src=twsrc%5Etfw">April 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+					<div style="float: right; max-width: 50%;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Whether it is true or not that they are already laying cables of 5G in Nigeria or not. Govt must not allow it in Nigeria and should take a proactive step in that regard. 4G that is here in Nigeria sef na problem. 3G dey do everything i need i beg... We must watch out...</p>&mdash; Senator Dino Melaye. (SDM) (@dino_melaye) <a href="https://twitter.com/dino_melaye/status/1246207989025058816?ref_src=twsrc%5Etfw">April 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<div style="float: left; max-width: 50%;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">If people knew what was unfolding&amp; what satan&amp;his Illuminati agents,his disciples like <a href="https://twitter.com/elonmusk?ref_src=twsrc%5Etfw">@elonmusk</a> &amp; <a href="https://twitter.com/BillGates?ref_src=twsrc%5Etfw">@BillGates</a> &amp;the proponents of the New World Order have in mind &amp;are doing with 5G, coronavirus &amp;the coming Anti-coronavirus vaccines,every Christian&amp;Muslim would join forces &amp;PRAY!</p>&mdash; Femi Fani-Kayode (@realFFK) <a href="https://twitter.com/realFFK/status/1245848861135994883?ref_src=twsrc%5Etfw">April 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+					<div style="float: right; max-width: 50%;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Threatening the life of my aburo <a href="https://twitter.com/dino_melaye?ref_src=twsrc%5Etfw">@dino_melaye</a> will not stop him. Those of us that maintain that 5G is EVIL, that there is more to Covid 19 than meets the eye and that an implicitly demonic agenda is unfolding before our very eyes cannot be deterred, intimidated or silenced.</p>&mdash; Femi Fani-Kayode (@realFFK) <a href="https://twitter.com/realFFK/status/1246853642977755137?ref_src=twsrc%5Etfw">April 5, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/twitter_20200624.html"></iframe>
+					</div>				
+				</section>
+
+				<section data-transition="fade">
+					<h4>Ranking the most mentioned Twitter User</h4>
+						<div class="f_iframe">
+							<iframe frameborder="0" seamless='seamless' scrolling=no src="file:///C:/Users/liuz2/Documents/Projects/covid_misinformation/plots/twitter_rank_20200624.html"></iframe>
+						</div>									
+				</section>
+
+				<!--Wrap-up-->
+				<section data-transition="fade">
+					<h3>Conclusion</h3>
+					<p>1. Two major soures of misinformation: traditional media and social media.</p>
+					<p>2. Celebrities, politicians, and influencers hold the power of making misinformation go viral.</p>
+					<p>3. Fact check!</p>
+
+				</section>
+
+				<!--Reference-->
+				<section data-transition="fade">
+					<h4>References</h4>
+					<p style="font-size:18px">1. FAQ about Google Trends data. Retrieved from https://support.google.com/trends/answer/4365533?hl=en&ref_topic=6248052 </p>
+					<p style="font-size:18px">2. Satariano, A. and Alba D, (April 10, 2020). Burning Cell Towers, Out of Baseless Fear They Spread the Virus. The New York Times. Retrieved from https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html </p>
+<!--				<p style="font-size:18px">3. Temperton, J, (April 6, 2020). How the 5G coronavirus conspiracy theory tore through the internet. WIRED. Retrieved from https://www.wired.co.uk/article/5g-coronavirus-conspiracy-theory </p>
+					<p style="font-size:18px">4. Heilweil, R, (April 24, 2020). How the 5G coronavirus conspiracy theory went from fringe to mainstream. The Vox. Retrieved from https://www.vox.com/recode/2020/4/24/21231085/coronavirus-5g-conspiracy-theory-covid-facebook-youtube </p>
+-->
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	.f_iframe iframe {
+	  width:100%;
+	  height:576px;
+  }
+</style>
