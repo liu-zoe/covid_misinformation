@@ -14,5 +14,17 @@ The first case the novel coronavirus (COVID-19) emerged in December 2019 in Wuha
 ### **Tools**
 Python is used to scrape and process data from online sources. The following python libraries are used: pandas, pytrends, twint, and plotly. Presentation is created using reveal.js 3.9.2. 
 
+### **Selected Plots**
+To view the plots, download the html file and open it in a chrome browser
+- [Global Confirmed Cases Across Time](plots/globalmap_animate.html) 
+- [Google Trends of Bat Soup Misinformation](plots/GT_bat_global_annotated.html)
+- [Google Trends of Wuhan Lab Misinformation](plots/GT_wuhanlab_20200504.html)
+- [Google Trends of Wuhan Lab Misinformation in the US by State in late Jan](plots/GT_wuhanlab_US_States_Jan[avg].html)
+- [Twitter Network of 5G-Coronavirus Tweets](plots/twitter_20200624.html)
+- [Ranking the most mentioned Twitter users in 5G-Coronavirus Tweets](plots/twitter_rank_20200624.html)
+
 ### Author
 > [Zoe Liu](https://github.com/liu-zoe)
+
+### Related Project
+[Time lapse visualization of the COVID-19 Outbreak](https://https://github.com/liu-zoe/wuhancv)
