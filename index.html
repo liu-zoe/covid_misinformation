@@ -30,13 +30,15 @@
 				<section data-transition="fade">
 					<h3>A Visual Story of the COVID19 Outbreak and How Misinformation Spreads</h3>
 					<p>Zoe Liu</p>
-					<p>Aug 5 2020</p>
+					<p>Presented at JSM on Aug 5 2020</p>
 				</section>
 
 				<!--Section: Intro-->
 				<section data-transition="fade">					
 					<div class="f_iframe">
+						<h6>Global Covid-19 Confirmed Cases</h6>
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/globalmap_animate.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
 				</section>
 				<!--Method-->
@@ -61,17 +63,33 @@
 					<h4>What are Google Trends data<a href="https://support.google.com/trends/answer/4365533?hl=en&ref_topic=6248052"><sup>1</sup></a>?</h4>
 					<ul>
 						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Random sample of actual search requests made to Google</li>
-						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Normalized search data to make comparisons between terms easiers</li>
-						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Search Interest scaled on a range of 0 to 100 based on a topic's proportion to all searches</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Normalized search data to make comparisons between terms easier</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Search interest scaled on a range of 0 to 100 based on a topic's proportion to all searches</li>
 						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Search terms with low search volume appear as "0"</li>
 						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Data point is relative in the range of time and geography</li>						
 					</ul>
 				</section>
-				<section data-transition="fade">
-					<h4>Twitter</h4>
+				<section data-transition="fade" id="fragments">
+					<h4>Notes on Google Trends data</h4>
 					<ul>
-						<li>Tweepy</li>
-						<li>Twint</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">In this project, most of Google Trends data are retrieved with the time frame of January to April 2020. 2019 data is retrieved within the time frame of January 2019 to April 2020 so that we can compare 2019 data with 2020. </li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Because it is a random sample of the actual complete data, the key word is “Trend”. When interpreting the data, the focus would be identifying any trends or patterns, rather than proving a relationship.</li>
+
+					</ul>
+				</section>				
+				<section data-transition="fade">
+					<h4>Twitter data</h4>
+					<ul>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">
+							I considered tweepy and twint to scrape twitter data.
+						</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">
+							Tweepy has the advantage of providing access to the entire twitter API methods. However, it requires a developer account and it returns tweets in the past seven days only. 
+						</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">
+							Twint does not require a developer account as it scrapes only the public tweets. Most importantly it returns data far beyond the past seven days. And that is the reason I went with twint.  
+						</li>
+
 					</ul>
 				</section>
 
@@ -85,7 +103,7 @@
 				<section data-background-iframe="img/SingTaoDaily_2020_01_07_YuanGUoYong_01.PNG" data-background-interactive>
 					<div style="position: absolute; width: 40%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Jan 7th, Sing Tao Daily, the second largest Chinese language newspaper in Hong Kong, quoted microbiologist Yuen Kwok-yung on the estimated origin of the virus.  
+							On January 7th, Sing Tao Daily, the second largest Chinese language newspaper in Hong Kong, quoted microbiologist Yuen Kwok-Yung on the estimated origin of the virus.  
 						</p>
 					</div>
 				</section>
@@ -95,7 +113,7 @@
 							"香港大學微生物學系講座教授袁國勇相信，武漢不明原因肺炎由冠狀病毒引起，他估計今次新病毒很大機會與沙士一樣，源頭來自蝙蝠，傳給某種野生動物，再跳到人類。"
 						</p>
 						<p>
-							"Hong Kong University microbiologist Yuen Kwok-yung believes the wuhan pneumonia is caused by a coronavirus and he esimates that the new virus is very similar as SARS in
+							"Hong Kong University microbiologist Yuen Kwok-Yung believes the wuhan pneumonia is caused by a coronavirus and he esimates that the new virus is very similar as SARS in
 							that it orignated from bats, passing on to other wild animals and eventually to human." 
 						</p>
 					</div>
@@ -103,22 +121,25 @@
 				<section data-background-iframe="img/batsoup_socialmedia.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							In late Jan, videos of bat soup went viral on Chinese social media Weibo and TikTok. Among them is a video of this young lady eating bat with chopsticks. 
+							In late January, videos of bat soup went viral on Chinese social media Weibo and TikTok across the world. Among them is a video of this young lady eating bat with chopsticks. 
 						</p>
 					</div>
 				</section>
 				<section data-background-iframe="img/batsoup_twitter_2020-01-22.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-						On Jan 22nd, Chen Qiushi, a lawyer and activist well-known online, shared one of the bat soup videos on Twitter
-						and asked: "...Will the Chinese stop eating wild animals after all this?". 
+						On January 22nd, Chen Qiushi, a lawyer and activist well-known online, shared one of the bat soup videos on Twitter
+						and asked: "...Will the Chinese stop eating wild animals after all this?". At the time, the video was viewed 4.8 million times.
+						</p>
+						<p>
+							It should be noted that Chen participated in the Hong Kong protests last year, risking his life to report on police brutality. He’s not the stereotypical conspiracy theorist that we associate with misinformation.
 						</p>
 					</div>
 				</section>
 				<section data-background-iframe="img/DailyMail_batsoup_2020-01-23.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-						Daily Mail ran a story on the bat soup videos and linked it to coronavirus on Jan 23rd. 
+						Daily Mail ran a story on the bat soup video and linked it to coronavirus on January 23rd. 
 						</p>
 					</div>
 				</section>
@@ -132,14 +153,14 @@
 				<section data-background-iframe="img/batsoup_youtube_paulwatson_2020-01-24.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Jan 24th, far-right YouTuber Paul Joseph Watson promoted the link between bat soup and coronavirus. 
+							On January 24th, far-right YouTuber Paul Joseph Watson promoted the link between bat soup and coronavirus. 
 						</p>
 					</div>
 				</section>
 				<section data-background-iframe="img/JesseWatters.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Mar 2nd, Fox News host Jesse Watters said:
+							On March 2nd, Fox News host Jesse Watters said:
 						</p>
 						<p>
 							"Let me tell you why it happened in China...They have these markets where they were eating raw bats and snakes.
@@ -151,26 +172,45 @@
 				<section data-background-iframe="img/A Song About Coronavirus by Kodama Boy.html" data-background-interactive>
 					<div style="position: absolute; width: 30%; left: 80%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Mar 15th, Kodama Boy wrote <i>A Song About Coronavirus</i>.
+							On March 15th, Kodama Boy wrote <i>A Song About Coronavirus</i>.
+						</p>
+						<p>
+							He is not the first or the only one who wrote songs (parody or not) about coronavirus. According to QUARTZ<sup>2</sup>, by March 3rd, there were more than 65 songs with "coronavirus" in the title on Spotify.
 						</p>
 					</div>
 				</section>
 				<section data-transition="fade">
-					<h4>Search Interest of "bat soup"</h4>
+					<p>So did the media stories and influencers contributed to the spread of the misinformation?</p>
+				</section>
+				<section data-transition="fade">
+					<h6>Search Interest of "bat soup"</h6>
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_bat_global.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
 				</section>
 				<section data-transition="fade">
-					<h4>Search Interest of "bat soup"</h4>
+					<h6>Search Interest of "bat soup"</h6>
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_bat_global_annotated.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
+				</section>
+				<section data-transition="fade">
+					<p>The timing of the media and social media stories align well 
+						with the soaring interest in late January and the comeback in March. 
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						Those stories above are not the only ones that promoted the bat soup theory. 
+						A great number of others have shared the bats soup videos on social media without fact-checking.
+					</p>
 				</section>
 				<!--Section: Misinformation 2: Coronavirus comes from the Wuhan lab-->
 				<section data-transition="fade">
 					<h3>Misinformation 2</h3>
-					<h3>"Coronavirus comes from the Wuhan lab"</h3>
+					<h3>"Coronavirus came from the Wuhan lab"</h3>
 				</section>
 				<section data-transition="fade">
 					<h3>ROUND ONE</h3>
@@ -178,14 +218,14 @@
 				<section data-background-iframe="img/Washington_Times_2020_01_24_BIll_Gertz.PNG" data-background-interactive>
 					<div style="position: absolute; width: 40%; left: 75%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Jan 24th, Bill Gertz wrote, "The deadly animal virus epidemic... may have originated in a Wuhan laboratory".
+							On January 24th, Bill Gertz wrote, "The deadly animal virus epidemic... may have originated in a Wuhan laboratory".
 						</p>						
 					</div>
 				</section>
 				<section data-background-iframe="img/GNews_2020_01_25.PNG" data-background-interactive>
 					<div style="position: absolute; width: 40%; left: 80%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Jan 25th, GNews pushed a story claiming that China will admit coronavirus coming from its P4 lab.
+							On January 25th, GNews pushed a story claiming that China will admit coronavirus coming from its P4 lab.
 						</p>
 					</div>
 				</section>
@@ -194,12 +234,15 @@
 						<p>
 							One the same day, Steve Bannon pushed the wuhan lab theory from GNews on his radio broadcast <em>War Room: Pandemic</em>.
 						</p>
+						<p>
+							New York Times reported back in December 2019 that Steve Bannon forged a lucrative financial relationship with Chinese businessman Guo Wengui who owns GNews. 
+						</p>
 					</div>
 				</section>
 				<section data-background-iframe="img/ZeroHedge_2020_01_29.PNG" data-background-interactive>
 					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							On Jan 29th, Tyler Durden's blog on Zero Hedge assigned a name to the wuhan lab theory.
+							On January 29th, Tyler Durden's blog on Zero Hedge assigned a name to the wuhan lab theory.
 						</p>
 					</div>
 				</section>
@@ -210,98 +253,238 @@
 							because "his primary field of study is researching how and why bats can be infected 
 							with some of the most nightmarish viruses in the world including Ebola, SARS and Coronavirus, and not get sick".
 						</p>
+						<p>
+							ZeroHedge was later banned by Twitter on January 31st for this blog post.
+						</p>
 					</div>
 				</section>
 
 				<section data-transition="fade">
-					<h4>Seach Interest of "Wuhan Lab" Key Words Worldwide: Jan through Mar</h4>
+					<h6>Search Interest of "wuhan lab": Jan through Mar</h6>
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_wuhanlab_tillMar_20200505.html"></iframe>
+						<p style="font-size:18px; margin-top: 0rem; margin-bottom: 0rem;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
+				</section>
+				<section data-transition="fade">
+					<p>The peak of search interest of key words such as “wuhan p4 lab” and “wuhan bio lab” appeared in late January. 
+					</p>
+					<p>Note that the word “P4” was mentioned in the GNews story. 
+					</p>
 				</section>
 
 				<section data-transition="fade">
 					<h3>ROUND TWO </h3>
 				</section>
 				<section data-background-iframe="img/WashintonPost_JoshRogin_2020_04_14.PNG" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On April 14th, columnist Josh Rogin published an opinion piece on the Washington Post, titled “State Department cables warned of safety issues at Wuhan lab studying bat coronavirus”. 
+						</p>
+					</div>
 				</section>
 				<section data-background-iframe="img/FoxNews_2020_04_15.png" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							On April 15th, Fox News adopted Rogin’s story and claimed that “Sources believe Coronavirus outbreak originated in Wuhan lab as part of China’s efforts to compete with US”. 
+						</p>
+					</div>
 				</section>
 				<section data-transition="fade">
-					<h4>Seach Interest of "Wuhan Lab" Key Words Worldwide: Jan through Apr</h4>
+					<h6>Search Interest of "wuhan lab": Jan through Apr</h6>
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_wuhanlab_20200504.html"></iframe>
+						<p style="font-size:18px; margin-top: 0rem; margin-bottom: 0rem;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
 				</section>
 				<section data-transition="fade">
-					<h4>Average Search interest in Jan</h4>
-					<div class="f_iframe">
-						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_wuhanlab_US_States_Jan[avg].html"></iframe>
-					</div>
-				</section>
-				</section>
-				<section data-transition="fade">
-					<h4>Average Search interest on Jan 25th (Repeated Sampling)</h4>
-					<div class="f_iframe">
-						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/Avg_wuhanlab_US_States_Jan25.html"></iframe>
-					</div>
-				</section>
-				<section data-transition="fade">
-					<h4>Average Search interest on Jan 26th (Repeated Sampling)</h4>
-					<div class="f_iframe">
-						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/Avg_wuhanlab_US_States_Jan26.html"></iframe>
-					</div>
-				</section>
-				<section data-transition="fade">
-					<h3>Misinformation 3: 5G Network</h3>
-				</section>
-				<section data-transition="fade">
-					Search Interest of 5G network in 2019
-					<div class="f_iframe">
-						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_5G_2020_01.html"></iframe>
-					</div>
-				</section>
-				<section data-transition="fade">
-					<p>On Jan 19th, a tweet speculated on a link between 5G and coronavirus:</p>
 					<p>
-						"Wuhan has 5,000+ #5G base stations now and 50,000 by 2021 — is it a disease or 5G?"
-						<a href="https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html"><sup>2</sup></a>
+						With the Google Trends search extended from end to March to end of April, a second peak appeared in mid-April, on April 15th and 16th , just a day or two after the leak of the state department cables. 
 					</p>
 				</section>
 				<section data-transition="fade">
-					<div style="float: center; max-width: 100%;">
-						<blockquote class="twitter-tweet" data-theme="dark"><p lang="nl" dir="ltr">Artikel verwijderd. Zegt weer genoeg. <a href="https://t.co/AGOGpYdprR">pic.twitter.com/AGOGpYdprR</a></p>&mdash; 1 1 : 5 9 : 0 1 (@NWOforum) <a href="https://twitter.com/NWOforum/status/1223870765893857281?ref_src=twsrc%5Etfw">February 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>					
+					<p>
+						It’s very likely that Rogin’s story created the second wave of the misinformation that the virus came from the Wuhan lab. 
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						Given that most of the news stories were from the US, I zoomed into the US data by state in the six days around the first peak, from January 24th to 29th.
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<h6>Average Search interest in Jan</h6>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_wuhanlab_US_States_Jan[avg].html"></iframe>
+						<p style="font-size:18px; margin-top: 0rem; margin-bottom: 0rem;" >[Refresh the page if the graph is not properly rendered]</p>
+					</div>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						On January 25th and 26th, we observe sustained higher interest in California compared to the other states.
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						So were the Californians leading the search interest in “wuhan lab” in January?
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						As Google Trends returns a random sample of the entire search data, it is possible that the pattern based on one slice of data is due to chance. I repeated sampling search trends on January 25th and 26th and calculated the average of the repeated sampling.
+					</p>
+				</section>
+
+
+				</section>
+				<section data-transition="fade">
+					<h6 style="font-size:28px">Average Search Interest on Jan 25th (Repeated Sampling)</h6>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/Avg_wuhanlab_US_States_Jan25.html"></iframe>
+						<p style="font-size:18px; margin-top: 0rem; margin-bottom: 0rem;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>
 				</section>
 				<section data-transition="fade">
-					Search Interest of 5G network in 2020
+					<h6 style="font-size:28px">Average Search Interest on Jan 26th (Repeated Sampling)</h6>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/Avg_wuhanlab_US_States_Jan26.html"></iframe>
+						<p style="font-size:18px; margin-top: 0rem; margin-bottom: 0rem;" >[Refresh the page if the graph is not properly rendered]</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<p>
+						As we observed before, California was the state with the highest search interest in “Wuhan Lab” and related key words on January 25th. 
+					</p>
+					<p>
+						The same occured on January 26th.
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						We only know that more searches made in California on January 25th and 26th than in other states, but not the reason why...
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<h3>Misinformation 3</h3>
+					<h3>"5G Network was associated with the spread of COVID-19"</h3>
+
+				</section>
+				<section data-transition="fade">
+					<h6>Search Interest of 5G Network in 2019</h6>
+					<div class="f_iframe">
+						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_5G_2020_01.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<p>
+						People googled 5g network sporadically in 2019. Search interests are mostly below 15%.
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						5G theories at that time were fringe conspiracy theories. However, the COVID-19 outbreak provided new angles into this theory.
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>On January 19th, a tweet speculated on a link between 5G and coronavirus:</p>
+					<p>
+						"Wuhan has 5,000+ #5G base stations now and 50,000 by 2021 — is it a disease or 5G?"
+						<a href="https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html"><sup>3</sup></a>
+					</p>
+				</section>
+				<section data-transition="fade">
+					<div style="float: left;">
+						<blockquote class="twitter-tweet" data-theme="dark"><p lang="nl" dir="ltr">Artikel verwijderd. Zegt weer genoeg. <a href="https://t.co/AGOGpYdprR">pic.twitter.com/AGOGpYdprR</a></p>&mdash; 1 1 : 5 9 : 0 1 (@NWOforum) <a href="https://twitter.com/NWOforum/status/1223870765893857281?ref_src=twsrc%5Etfw">February 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>					
+					</div>
+					<div style="float: right; max-width: 50%;">
+						<p>
+							On January 22nd, a Belgian newspaper published an interview with Kris Van Kerckhoven, a local doctor with a headline reading “5G is life-threatening and no one knows it.” 
+						</p>
+					</div>
+				</section>
+				<section data-transition="fade">
+					<h6>Search Interest of 5G Network in 2020</h6>
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/GT_5G_2020_03.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>				
 				</section>
+				<section data-transition="fade">
+					<p>
+						The 5G-coronavirus theory started to circulate online in late January, but it did not retain enough traction in January and February.
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						In March, there was a growing interest in the effect of 5G but the real surge came in the first week of April. 
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						So what exactly happened in April that led to the sudden interest in 5G and coronavirus?
+					</p>
+				</section>				
+
 				<section data-background-iframe="img/codastory_2020_04_14_01.html" data-background-interactive>
 					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
 						<p>
-							Isobel Cockerel and Ashely Jung at codastory pointed out a few celebrities pushed 5G coronavirus conspiracies to millions of fans.
+							Isobel Cockerel and Ashely Jung at codastory pointed out a few celebrities pushed 5G coronavirus conspiracies to millions of fans. Many of those posts occurred in early April this year and most of them on Twitter.
 						</p>
 					</div>
 				</section>
 				<section data-background-iframe="img/codastory_2020_04_14_02.html" data-background-interactive>
+					<div style="position: absolute; width: 40%; left: 70%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>
+							Among those celebrities, Wiz Khalifa had the most followers on Twitter. 
+							On April 3rd, he twitted “Coroan?5g? Or Both?” Other celebrities mentioned include John Cusack, Teddy Riley, and Woody Harrelson.
+							But are those celebrities the only ones pushing the 5G Coronavirus theory?
+						</p>
+					</div>					
 				</section>
 				<section data-transition="fade" id="fragments">
-					<p>Scraping Public Twitter Posts</p>
+					<h6>Scraping Public Twitter Posts</h6>
 					<ul>
-						<li class="fragment fade-in-then-semi-out">April 1st to 8th </li>
-						<li class="fragment fade-in-then-semi-out">Python package: twint </li>
-						<li class="fragment fade-in-then-semi-out">Tweets contains "5g" and "coronavirus", "covid", or "virus"</li>
-						<li class="fragment fade-in-then-semi-out">Compile a list of individual users mentioned or quoted the most</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">April 1st to 8th </li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Tweets contain "5g" and "coronavirus", "covid", or "virus"</li>
+						<li class="fragment fade-in-then-semi-out" style="font-size:22px;">Compile a list of individual users mentioned or quoted the most</li>
 					</ul>
 				</section>
 
 				<section data-transition="fade">
 					<div class="f_iframe">
 						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/twitter_20200624.html"></iframe>
+						<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 					</div>				
+				</section>
+				<section data-transition="fade">
+					<p>
+						The most frequently mentioned individual user is Donald Trump. Many of tweets mentioned Trump also mentioned Boris Johnson and David Icke (a British conspiracy theorist).
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						Rhiannon Williams, a technology correspondent, is the second most quoted individual. She published an article “Why 5G isn’t causing the coronavirus pandemic” on April 1st. 
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						Wiz Khalifa did not make it to the top list.
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						What is surprising is that while the discussion around 5G spread in United States and the UK, on the other side of the world, Nigerian politicians such as Femi Fani-Kayode and Senator Dino Melaye emerged as major contributor to the spreading of 5G misinformation.  
+					</p>
 				</section>
 
 				<section data-transition="fade">
@@ -323,24 +506,55 @@
 				</section>
 
 				<section data-transition="fade">
-					<div class="f_iframe">
-						<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/twitter_20200624.html"></iframe>
-					</div>				
+					<p>
+						JJ. Omojuwa, a Nigerian writer, argued against the link between 5G and coronavirus on Twitter. 
+					</p>
+					<p>
+						Twitter users often refer to two of the three (Omojuwa, Fani-Kayode, and Melaye) in the same tweet and a triangle of tweets can be observed in the network. 
+					</p>
 				</section>
 
 				<section data-transition="fade">
-					<h4>Ranking the most mentioned Twitter User</h4>
+					<p>
+						The network is based on accumulated data from the 1st to the 8th. 
+					</p>
+					<p>
+						What if we split the data by day?
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<h6>Ranking the most mentioned Twitter User</h6>
 						<div class="f_iframe">
 							<iframe frameborder="0" seamless='seamless' scrolling=no src="plots/twitter_rank_20200624.html"></iframe>
+							<p style="font-size:18px; margin-top: 5px;" >[Refresh the page if the graph is not properly rendered]</p>
 						</div>									
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						When the data are split by day, the most mentioned individuals across time are Donald Trump and David Icke. 
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						Rhiannon Williams obtained the most quotes/mentions only on April 3rd.
+					</p>
+				</section>
+
+				<section data-transition="fade">
+					<p>
+						Starting from April 4th, we see more mentions of the Nigerian users.
+					</p>
 				</section>
 
 				<!--Wrap-up-->
 				<section data-transition="fade">
 					<h3>Conclusion</h3>
-					<p>1. Two major soures of misinformation: traditional media and social media.</p>
-					<p>2. Celebrities, politicians, and influencers hold the power of making misinformation go viral.</p>
-					<p>3. Fact check!</p>
+					<p>1. Two major sources of misinformation are traditional media and social media.</p>
+					<p>2. Celebrities, politicians, and influencers sometimes hold the power of making a previously fringe misinformation go viral in a very short amount of time.</p>
+					<p>3. Anyone can spread misinformation sometimes even by mistake. Fact check before posting on social media.</p>
 
 				</section>
 
@@ -348,10 +562,18 @@
 				<section data-transition="fade">
 					<h4>References</h4>
 					<p style="font-size:18px">1. FAQ about Google Trends data. Retrieved from https://support.google.com/trends/answer/4365533?hl=en&ref_topic=6248052 </p>
-					<p style="font-size:18px">2. Satariano, A. and Alba D, (April 10, 2020). Burning Cell Towers, Out of Baseless Fear They Spread the Virus. The New York Times. Retrieved from https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html </p>
+					<p style="font-size:18px">2. Kopf, Dan, (March 3, 2020). There are already more than 65 songs with "coronavirus" in the title on Spotify. Quartz. Retrieved from https://qz.com/1811814/theres-already-more-than-65-songs-about-coronavirus-on-spotify </p>
+					<p style="font-size:18px">3. Satariano, A. and Alba D, (April 10, 2020). Burning Cell Towers, Out of Baseless Fear They Spread the Virus. The New York Times. Retrieved from https://www.nytimes.com/2020/04/10/technology/coronavirus-5g-uk.html </p>
 
 				</section>
 
+				<section data-transition="fade">
+					<h2>Thank You!</h2>
+					<p style="font-size:18px">
+						github.com/liu-zoe/covid_misinformation
+					</p>
+
+				</section>				
 			</div>
 		</div>
 

@@ -27,4 +27,4 @@ To view the plots, download the html file and open it in a chrome browser
 > [Zoe Liu](https://github.com/liu-zoe)
 
 ### Related Project
-[Time lapse visualization of the COVID-19 Outbreak](https://https://github.com/liu-zoe/wuhancv)
+[Time lapse visualization of the COVID-19 Outbreak](https://github.com/liu-zoe/wuhancv)
